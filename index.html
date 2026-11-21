@@ -177,7 +177,7 @@ section { padding:90px 0; }
   font-size:13px;
 }
 
-/* THE SKUNK ARTIST SECTION */
+/* ARTIST SECTION */
 .artist {
   background:#0e0e0e;
   border-top:1px solid #242019;
@@ -233,7 +233,67 @@ section { padding:90px 0; }
   text-transform:uppercase;
 }
 
-/* RELIGIOUS BRAND SECTION */
+/* MUSIC VIDEO PLAYERS */
+.music-category {
+  margin-top:55px;
+}
+.music-category:first-of-type {
+  margin-top:0;
+}
+.category-title {
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+  color:var(--gold2);
+  margin:0 0 24px;
+  padding-bottom:14px;
+  border-bottom:1px solid #342b1b;
+}
+.music-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+.video-card {
+  overflow:hidden;
+  border:1px solid #342b1b;
+  background:linear-gradient(145deg,#151515,#0d0d0d);
+  transition:transform .2s,border-color .2s;
+}
+.video-card:hover {
+  transform:translateY(-3px);
+  border-color:var(--gold);
+}
+.video-frame {
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#000;
+}
+.video-frame iframe {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+.video-info {
+  padding:18px 20px;
+}
+.video-info h3 {
+  font-family:'Playfair Display',serif;
+  font-size:21px;
+  margin:0;
+  color:var(--text);
+}
+.video-info p {
+  color:var(--muted);
+  font-size:11px;
+  margin:8px 0 0;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* RELIGIOUS BRAND */
 .religious {
   background:radial-gradient(ellipse at 20% 50%,#21190e,#080808 70%);
   border-bottom:1px solid #29231a;
@@ -270,35 +330,7 @@ section { padding:90px 0; }
 }
 .religious-copy h2 span { color:var(--gold2); }
 
-.music-grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-.release {
-  padding:22px;
-  border:1px solid #29251e;
-  background:#111;
-}
-.release h3 {
-  margin:0 0 8px;
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-}
-.release p {
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-}
-.release a {
-  display:inline-block;
-  margin-top:16px;
-  color:var(--gold2);
-  font-size:11px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-
+/* CONTACT */
 .contact {
   text-align:center;
   background:radial-gradient(ellipse at center,#241b0d,#080808 65%);
@@ -339,6 +371,7 @@ footer .foot {
   .brand-art img,
   .religious-art img { max-height:210px; }
   .music-grid { grid-template-columns:1fr; }
+  .category-title { font-size:25px; }
   section { padding:65px 0; }
   .artist-copy h2,
   .brand-copy h2 { font-size:34px; }
@@ -384,6 +417,7 @@ footer .foot {
   </div>
 </section>
 
+<!-- STUDIO -->
 <section id="studio">
   <div class="wrap">
     <div class="section-head">
@@ -434,36 +468,94 @@ footer .foot {
   </div>
 </section>
 
-<!-- MUSIC -->
+<!-- MUSIC & VIDEOS -->
 <section id="music">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Selected releases</div>
       <h2>Music & videos</h2>
-      <p>Discover releases and music videos from The Strugglistan Studios and The Skunk.</p>
+      <p>Watch music videos and discover releases from The Skunk and collaborating artists. Play directly on this website.</p>
     </div>
-    <div class="music-grid">
-      <article class="release">
-        <h3>BEFIKRA</h3>
-        <p>Music release · Add streaming/video link</p>
-        <a href="#contact">Watch / Listen ↗</a>
-      </article>
-      <article class="release">
-        <h3>YAAR CHAKKMA</h3>
-        <p>Music release · Add streaming/video link</p>
-        <a href="#contact">Watch / Listen ↗</a>
-      </article>
-      <article class="release">
-        <h3>JALANDHAR</h3>
-        <p>Music release · Add streaming/video link</p>
-        <a href="#contact">Watch / Listen ↗</a>
-      </article>
-      <article class="release">
-        <h3>More releases</h3>
-        <p>Add your full music catalogue and video links here.</p>
-        <a href="#contact">Explore channel ↗</a>
-      </article>
+
+    <!-- SONY H SONGS -->
+    <div class="music-category">
+      <h3 class="category-title">Sony H / The Skunk</h3>
+      <div class="music-grid">
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/4THAinyb2Ys" title="END KRAUNDE - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>END KRAUNDE</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/fXQGJRgAedE" title="BEFIKRA - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>BEFIKRA</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/VRKtrYvuqBI" title="YAAR CHAKMA - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>YAAR CHAKMA</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/g0TAvmorsgQ" title="YAAR SHUTTGE - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>YAAR SHUTTGE</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/E-olluYrMYU" title="JALANDHAR - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>JALANDHAR</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/CdKqAqiJ7Is" title="ANN MANN GUN - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>ANN MANN GUN</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/h5nXlwORD3s" title="BARKING DOGS - Sony H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>BARKING DOGS</h3><p>Sony H / The Skunk</p></div>
+        </article>
+
+      </div>
     </div>
+
+    <!-- COLLABORATIONS -->
+    <div class="music-category">
+      <h3 class="category-title">Worked With Other Artists</h3>
+      <div class="music-grid">
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/qYG2SH5-YiI" title="KOI SI - JAG_ROOP ft. SONY H" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>KOI SI</h3><p>JAG_ROOP ft. SONY H</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/gmXXov5Oqvw" title="THANDIAN ROTIAN - BITTU CHANDLA" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>THANDIAN ROTIAN</h3><p>BITTU CHANDLA</p></div>
+        </article>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -484,11 +576,31 @@ footer .foot {
           <span class="tag">Aartis</span>
           <span class="tag">Devotional Music</span>
         </div>
-        <div class="actions">
-          <a class="btn gold" href="#contact">Contact Religious Studio</a>
-        </div>
       </div>
     </div>
+
+    <!-- RELIGIOUS SONGS -->
+    <div class="music-category">
+      <h3 class="category-title">Devotional Music</h3>
+      <div class="music-grid">
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/ybwamA3n2x0" title="MERA BABA - Religious Music" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>MERA BABA</h3><p>The Strugglistan Studios Religious</p></div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/ET-Q_8jertc" title="BEGUMPURA - Religious Music" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info"><h3>BEGUMPURA</h3><p>The Strugglistan Studios Religious</p></div>
+        </article>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -523,63 +635,57 @@ footer .foot {
     <h2>Let’s make something<br><span style="color:var(--gold2)">sound unforgettable.</span></h2>
     <p>For studio bookings, production, collaborations or lessons — get in touch.</p>
 
-<div class="actions" style="justify-content:center">
+    <div class="actions" style="justify-content:center">
 
-  <a class="btn gold"
-   href="https://wa.me/34631193194"
-   target="_blank"
-   rel="noopener">
+      <a class="btn gold"
+         href="https://wa.me/34631193194"
+         target="_blank"
+         rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="#25D366"
+             style="vertical-align:middle;margin-right:7px">
+          <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.58 0 .25 5.33.25 11.88c0 2.09.55 4.13 1.59 5.93L.15 24l6.34-1.66a11.9 11.9 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.5-8.41ZM12.14 21.75a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.76.98 1-3.66-.24-.38a9.85 9.85 0 1 1 8.41 4.65Zm5.41-7.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+        </svg>
+        WhatsApp Booking
+      </a>
 
-  <svg xmlns="http://www.w3.org/2000/svg"
-       width="20" height="20"
-       viewBox="0 0 24 24"
-       fill="#25D366"
-       style="vertical-align:middle;margin-right:7px">
-    <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.58 0 .25 5.33.25 11.88c0 2.09.55 4.13 1.59 5.93L.15 24l6.34-1.66a11.9 11.9 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.5-8.41ZM12.14 21.75a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.76.98 1-3.66-.24-.38a9.85 9.85 0 1 1 8.41 4.65Zm5.41-7.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
-  </svg>
+      <a class="btn" href="tel:+34631193194">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             style="vertical-align:middle;margin-right:7px">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+          19.79 19.79 0 0 1-8.63-3.07
+          19.5 19.5 0 0 1-6-6
+          19.79 19.79 0 0 1-3.07-8.67
+          A2 2 0 0 1 4.11 2h3
+          a2 2 0 0 1 2 1.72
+          c.12.96.36 1.9.72 2.79
+          a2 2 0 0 1-.45 2.11L8.11 9.89
+          a16 16 0 0 0 6 6l1.27-1.27
+          a2 2 0 0 1 2.11-.45
+          c.89.36 1.83.6 2.79.72
+          A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Direct Call
+      </a>
 
-  WhatsApp Booking
-</a>
+      <a class="btn" href="mailto:thestrugglistanstudios@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             style="vertical-align:middle;margin-right:7px">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 7L2 7"/>
+        </svg>
+        Email the Studio
+      </a>
 
-  <a class="btn" href="tel:+34631193194">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-       viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-       style="vertical-align:middle;margin-right:7px">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-    19.79 19.79 0 0 1-8.63-3.07
-    19.5 19.5 0 0 1-6-6
-    19.79 19.79 0 0 1-3.07-8.67
-    A2 2 0 0 1 4.11 2h3
-    a2 2 0 0 1 2 1.72
-    c.12.96.36 1.9.72 2.79
-    a2 2 0 0 1-.45 2.11L8.11 9.89
-    a16 16 0 0 0 6 6l1.27-1.27
-    a2 2 0 0 1 2.11-.45
-    c.89.36 1.83.6 2.79.72
-    A2 2 0 0 1 22 16.92z"/>
-  </svg>
-  Direct Call
-</a>
+      <a class="btn" href="#home">Back to Top ↑</a>
 
-  <a class="btn" href="mailto:thestrugglistanstudios@gmail.com">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-       viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-       style="vertical-align:middle;margin-right:7px">
-    <rect x="2" y="4" width="20" height="16" rx="2"/>
-    <path d="m22 7-10 7L2 7"/>
-  </svg>
-  Email the Studio
-</a>
+    </div>
 
-  <a class="btn" href="#home">
-    Back to Top ↑
-  </a>
-
-</div>
-
-    <p style="font-size:11px;margin-top:25px">Social and contact links will be added before launch.</p>
+    <p style="font-size:11px;margin-top:25px">The Strugglistan Studios · Barcelona, Spain</p>
   </div>
 </section>
 
