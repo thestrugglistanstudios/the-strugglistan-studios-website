@@ -10,99 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-/* PREMIUM BOOKING SECTION <!-- BOOKING SECTION -->
-<section class="booking-section" id="booking">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Studio Reservations</div>
-      <h2>Book Your Session</h2>
-      <p>Choose your recording option.</p>
-    </div>
 
-    <div class="booking-grid">
-
-      <details class="booking-option">
-        <summary>PER HOUR</summary>
-        <div class="booking-price">
-          <strong>€50</strong>
-          <p>Per hour studio session</p>
-          <a class="btn gold"
-             href="https://wa.me/34631193194?text=Hello%2C%20I%20want%20to%20book%20a%20studio%20session%20for%20%E2%82%AC50%20per%20hour."
-             target="_blank" rel="noopener">
-            BOOK THIS SESSION
-          </a>
-        </div>
-      </details>
-
-      <details class="booking-option">
-        <summary>PER DAY</summary>
-        <div class="booking-price">
-          <strong>€100</strong>
-          <p>Full day · One song</p>
-          <a class="btn gold"
-             href="https://wa.me/34631193194?text=Hello%2C%20I%20want%20to%20book%20the%20full-day%20one-song%20package%20for%20%E2%82%AC100."
-             target="_blank" rel="noopener">
-            BOOK THIS SESSION
-          </a>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section> */
-.booking-section {
-  background: radial-gradient(ellipse at center, #241a0d, #080808 75%);
-  border-block: 1px solid #49391e;
-}
-.booking-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-.booking-option {
-  border: 1px solid #8c6b32;
-  background: linear-gradient(145deg,#19140d,#090909);
-  padding: 24px;
-}
-.booking-option summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #f1d28a;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-.booking-option summary::-webkit-details-marker {
-  display: none;
-}
-.booking-option summary::after {
-  content: "+";
-  font-size: 25px;
-}
-.booking-option[open] summary::after {
-  content: "−";
-}
-.booking-price {
-  border-top: 1px solid #49391e;
-  margin-top: 22px;
-  padding-top: 20px;
-}
-.booking-price strong {
-  display: block;
-  color: #f1d28a;
-  font-size: 38px;
-  margin-bottom: 8px;
-}
-.booking-price p {
-  color: #aaa39a;
-  font-size: 13px;
-}
-@media(max-width:760px) {
-  .booking-grid { grid-template-columns: 1fr; }
-}
 <style>
 :root {
   --bg:#080808;
@@ -127,7 +35,7 @@ header {
   position:sticky;
   top:0;
   z-index:20;
-  background:rgba(8,8,8,.92);
+  background:rgba(8,8,8,.94);
   backdrop-filter:blur(14px);
   border-bottom:1px solid #27231b;
 }
@@ -154,13 +62,24 @@ nav {
 }
 .links {
   display:flex;
-  gap:20px;
+  align-items:center;
+  gap:18px;
   color:#c8c2b7;
-  font-size:11px;
+  font-size:10px;
   text-transform:uppercase;
   letter-spacing:.08em;
 }
 .links a:hover { color:var(--gold2); }
+
+.nav-book {
+  border:1px solid var(--gold);
+  padding:11px 15px;
+  color:var(--gold2);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.1em;
+  white-space:nowrap;
+}
 
 .hero {
   min-height:80vh;
@@ -168,7 +87,23 @@ nav {
   align-items:center;
   position:relative;
   overflow:hidden;
-  background:radial-gradient(ellipse at 72% 45%,#302313 0,#15120d 22%,#080808 62%);
+  background:
+    radial-gradient(ellipse at 75% 45%,rgba(125,81,26,.38),transparent 48%),
+    linear-gradient(110deg,#080808 8%,#15100a 55%,#080808 100%);
+  border-bottom:1px solid #49391e;
+}
+.hero:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 110px,
+      rgba(201,164,92,.025) 111px,
+      transparent 113px
+    );
 }
 .hero:after {
   content:"";
@@ -269,6 +204,75 @@ section { padding:90px 0; }
   font-size:13px;
 }
 
+/* BOOKING SECTION */
+.booking-section {
+  background:
+    radial-gradient(ellipse at center,#241a0d,#080808 75%);
+  border-block:1px solid #49391e;
+}
+.booking-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.booking-option {
+  border:1px solid #8c6b32;
+  background:linear-gradient(145deg,#19140d,#090909);
+  padding:25px;
+  transition:border-color .2s,transform .2s;
+}
+.booking-option:hover {
+  border-color:var(--gold2);
+  transform:translateY(-2px);
+}
+.booking-option summary {
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--gold2);
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+.booking-option summary::-webkit-details-marker {
+  display:none;
+}
+.booking-option summary::after {
+  content:"+";
+  font-size:27px;
+  font-weight:400;
+}
+.booking-option[open] summary::after {
+  content:"−";
+}
+.booking-hint {
+  color:var(--muted);
+  font-size:12px;
+  margin:12px 0 0;
+}
+.booking-price {
+  border-top:1px solid #49391e;
+  margin-top:22px;
+  padding-top:20px;
+}
+.booking-price strong {
+  display:block;
+  color:var(--gold2);
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  margin-bottom:8px;
+}
+.booking-price p {
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:20px;
+}
+.booking-price .btn {
+  text-align:center;
+}
+
 /* ARTIST SECTION */
 .artist {
   background:#0e0e0e;
@@ -326,12 +330,8 @@ section { padding:90px 0; }
 }
 
 /* MUSIC VIDEO PLAYERS */
-.music-category {
-  margin-top:55px;
-}
-.music-category:first-of-type {
-  margin-top:0;
-}
+.music-category { margin-top:55px; }
+.music-category:first-of-type { margin-top:0; }
 .category-title {
   font-family:'Playfair Display',serif;
   font-size:30px;
@@ -368,9 +368,7 @@ section { padding:90px 0; }
   height:100%;
   border:0;
 }
-.video-info {
-  padding:18px 20px;
-}
+.video-info { padding:18px 20px; }
 .video-info h3 {
   font-family:'Playfair Display',serif;
   font-size:21px;
@@ -449,6 +447,10 @@ footer .foot {
   flex-wrap:wrap;
 }
 
+@media(max-width:900px) {
+  .links { gap:10px; font-size:9px; }
+  .nav-book { display:none; }
+}
 @media(max-width:760px) {
   nav { padding:9px 0; }
   .brand-logo { width:55px; height:55px; }
@@ -456,6 +458,7 @@ footer .foot {
   .links { display:none; }
   .hero { min-height:72vh; }
   .grid { grid-template-columns:1fr; }
+  .booking-grid { grid-template-columns:1fr; }
   .artist-inner,
   .religious-inner { grid-template-columns:1fr; }
   .brand-art,
@@ -486,8 +489,11 @@ footer .foot {
         <a href="#music">Music</a>
         <a href="#religious">Religious</a>
         <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
         <a href="#contact">Contact</a>
       </div>
+
+      <a class="nav-book" href="#booking">BOOK SESSION</a>
     </nav>
   </div>
 </header>
@@ -503,7 +509,7 @@ footer .foot {
       <p class="lead">Punjabi roots. Modern sound. A creative space for music, emotion and original ideas — built in Barcelona.</p>
       <div class="actions">
         <a class="btn gold" href="#music">Explore music</a>
-        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="#booking">Book your session</a>
       </div>
     </div>
   </div>
@@ -533,6 +539,49 @@ footer .foot {
         <h3>Mix & Master</h3>
         <p>Clarity, punch, depth and balance, with a sound that translates across listening systems.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Studio Reservations</div>
+      <h2>Book Your Session</h2>
+      <p>Choose your recording option.</p>
+    </div>
+
+    <div class="booking-grid">
+
+      <details class="booking-option">
+        <summary>PER HOUR</summary>
+        <p class="booking-hint">Click to view price</p>
+        <div class="booking-price">
+          <strong>€50</strong>
+          <p>Per hour studio session</p>
+          <a class="btn gold"
+             href="https://wa.me/34631193194?text=Hello%2C%20I%20want%20to%20book%20a%20studio%20session%20for%20%E2%82%AC50%20per%20hour."
+             target="_blank" rel="noopener">
+            BOOK THIS SESSION
+          </a>
+        </div>
+      </details>
+
+      <details class="booking-option">
+        <summary>PER DAY</summary>
+        <p class="booking-hint">Click to view price</p>
+        <div class="booking-price">
+          <strong>€100</strong>
+          <p>Full day · One song</p>
+          <a class="btn gold"
+             href="https://wa.me/34631193194?text=Hello%2C%20I%20want%20to%20book%20the%20full-day%20one-song%20package%20for%20%E2%82%AC100."
+             target="_blank" rel="noopener">
+            BOOK THIS SESSION
+          </a>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>
