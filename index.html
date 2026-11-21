@@ -10,7 +10,60 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+/* PREMIUM BOOKING SECTION */
+.booking-section {
+  background: radial-gradient(ellipse at center, #241a0d, #080808 75%);
+  border-block: 1px solid #49391e;
+}
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.booking-option {
+  border: 1px solid #8c6b32;
+  background: linear-gradient(145deg,#19140d,#090909);
+  padding: 24px;
+}
+.booking-option summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f1d28a;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.booking-option summary::-webkit-details-marker {
+  display: none;
+}
+.booking-option summary::after {
+  content: "+";
+  font-size: 25px;
+}
+.booking-option[open] summary::after {
+  content: "−";
+}
+.booking-price {
+  border-top: 1px solid #49391e;
+  margin-top: 22px;
+  padding-top: 20px;
+}
+.booking-price strong {
+  display: block;
+  color: #f1d28a;
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+.booking-price p {
+  color: #aaa39a;
+  font-size: 13px;
+}
+@media(max-width:760px) {
+  .booking-grid { grid-template-columns: 1fr; }
+}
 <style>
 :root {
   --bg:#080808;
